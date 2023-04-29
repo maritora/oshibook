@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for portfolio-oshibook on 2023-04-29T18:58:17+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "portfolio-oshibook"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[build]
+  [build.args]
+    BUNDLER_VERSION = "2.1.4"
+    BUILD_COMMAND = "bin/rails fly:build"
+    SERVER_COMMAND = "bin/rails fly:server"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+
+[[statics]]
+  guest_path = "/rails/public"
+  url_prefix = "/"
