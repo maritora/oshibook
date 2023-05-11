@@ -1,6 +1,6 @@
 <article>
-  <div class="background"></div>
-    <div class="article-card col-lg-8 text-center">
+  <div class="background">
+    <div class="article-card text-center">
       <p class="mb-0 pt-3">
         <span class="m-2">みんなの推し紹介アプリ</span>
       </p>
@@ -8,30 +8,28 @@
         <div class="m-5">OSHIBOOK</div>
       </h1>
     </div>
+      <span id="page-link">
+        <a href="#area-1" class="heart-button top_mb1 top_menu_bt">OSHIBOOKとは？</a>
+      </span>    
+    <% if user_signed_in? %>
+        <%= link_to "みんなの推し一覧へ",:profiles, class:"heart-button top_mb2 top_menu_bt" %>
+      <% else %>
+          <%= link_to "新規ユーザー登録", :new_user_registration, class:"heart-button top_mb2 top_menu_bt" %>
+          <%= link_to "ログイン", :new_user_session, class:"heart-button top_mb3 top_menu_bt" %>
+          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login heart-button top_mb4 top_menu_bt" %>
+      <% end %>
+  </div>
 </article>
 <div class="top_object">
-  <% if user_signed_in? %>
-    <div class="nav-item">
-      <%= link_to "みんなの推し一覧へ",:profiles, class:"top_menu" %>
-    </div>
-    <div class="nav-item">
-      <%= link_to "ログアウト", '/users/sign_out/', method: :delete, class:"top_menu" %>
-    </div>
-    <% else %> 
-      <div class="nav-item">
-        <li class = "btn btn-primary my-2 mx-3"><%= link_to "ログイン", :new_user_session %></li>
-        <li class = "btn btn-secondary"><%= link_to "新規登録", :new_user_registration %></li>
-        <li class= "top_gr"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %></li>
-      </div>
-    <% end %>
-
   <nav></nav>
   <div class="align-items-center flex-column">
     <div class="mt-5">
-      <div class="about_title">
-        <h2 class="contents">About</h2> 
-        <h3 class="page-title">OSHIBOOKとは？</h3>
-      </div>
+      <section id="area-1">
+        <div class="about_title">        
+          <h2 class="contents">About</h2> 
+          <h3 class="page-title">OSHIBOOKとは？</h3>
+        </div>
+      </section>
       <div>
         <p class="text-body-2 mt-7">OSHIBOOKは手軽に推しの紹介をできるサービスです。好きなアイドルや芸能人・スポーツ選手などあなたの推しや、推しの好きなところを存分にアピールし、個人で楽しむのも良し、友達とシェアしても盛り上がります！</p>
       </div>
@@ -42,11 +40,12 @@
         <h3 class="page-title">使い方</h3>
       </div>
       <div>
-        <li class="text-body-2 mt-7">ログイン後、プロフィールの閲覧・作成が可能です。</li>
-        <li class="text-body-2">作成フォームに内容を書き込み、カラーを選んでオリジナルのプロフィールの完成！</li>
-        <li class="text-body-2">自身のSNSのURLの共有もできるので、共通の推しを通して仲が深まるかも！</li>
-        <li class="text-body-2">検索機能から共通の推しプロフィールを探すことができます！</li>
-        <li class="text-body-2">自身の作成履歴から、自分のアカウントで作成したプロフィール一覧を閲覧・編集できます。</li>
+        <li class="text-body-2 mt-7 howto">ログイン後、プロフィールの閲覧・作成が可能です。</li>
+        <li class="text-body-2 howto">ヘッダーメニュー内の「プロフィール作成」またはみんなの推し一覧の「プロフィール作成する！」ボタンから新規作成できます。作成フォームに内容を書き込み、カラーを選んでオリジナルのプロフィールの完成！</li>
+        <li class="text-body-2 howto">自身のSNSのURLの共有・作成後の画面からTwitter共有もできるので、共通の推しを通して仲が深まるかも！</li>
+        <li class="text-body-2 howto">検索機能から推しの名前・作成者で共通の推しプロフィールを探すことができます！（並び替えも可能）</li>
+        <li class="text-body-2 howto">お気に入りのプロフィールを「いいね」することで、一覧画面のいいねした投稿からいいねした一覧を見ることができます。</li>
+        <li class="text-body-2 howto">自身の作成履歴から、自分のアカウントで作成したプロフィール一覧を閲覧・編集できます。</li>
       </div>
     </div>
     <div  class="mt-5">

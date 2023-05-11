@@ -32,6 +32,7 @@ h3{
 }
 
 th{
+    text-align: center;
     padding:7px;
     font-size: 16px;
     line-height: 24px;
@@ -240,6 +241,7 @@ td{
     .delete-btn:hover, .white-btn {
         background-color: rgb(235, 230, 230);
         transition: .2s;
+        text-decoration: none;
     }
     .btn {
         display: inline-block;
@@ -270,6 +272,7 @@ td{
     .delete-btn:hover, .white-btn {
         background-color: rgb(235, 230, 230);
         transition: .2s;
+        text-decoration: none;
     }
     .btn {
         display: inline-block;
@@ -293,9 +296,6 @@ td{
         border-radius: 50rem!important;
     }
 
-.show-form{
-    margin:50px;
-}
 .my-menu{
     margin-right: 1rem!important;
     
@@ -312,11 +312,19 @@ td{
   padding: 8px 15px;
   margin: 0 5px;
 }
+.like{
+  background-color: #ffa8bc;
+}
 .index_menu:hover{
   background-color: #777777;
+  text-decoration: none;
 }
 .mt-1{
   margin-top: 30px;
+}
+.ml-1{
+  float: right;
+  margin: 10px;
 }
 .m-1{
   margin: 5px;
@@ -326,7 +334,7 @@ td{
   font-size:20px;
 }
 form{
-  width:460px;
+  width:500px;
   margin:0 auto;
 }
 .item{
@@ -334,8 +342,11 @@ form{
   margin-bottom: 20px;
 }
 .label{
+  color: #4b4b4b;
+  font-size: 12px;
+  text-align: left;
   float: left;
-  margin-right: 20px;
+  margin-right: 100px;
   width:135px;
   border-left: solid 3px #e0505d;
   padding-left: 10px;
@@ -372,4 +383,25 @@ textarea{
   font-weight:bold;
   padding: 11px 18px;
   margin: 0 5px;
+}
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
+  text-decoration: none;
+}
+
+.page{
+  text-align:center;
+  margin: 10px;
 }

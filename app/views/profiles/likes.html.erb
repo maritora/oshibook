@@ -1,0 +1,39 @@
+<div class="main_object">
+<h2>いいね一覧</h2>
+<br>
+  <table class="profile-index">
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th><%= sort_link(@search, :user_name, "作成者") %></th>
+      <th><%= sort_link(@search, :oshi_name, "推し") %></th>
+      <th><%= sort_link(@search, :updated_at, "更新日") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @like_profiles.each do |profile|%>
+      <tr class="items">
+        <% if profile.image.attached? %>  
+          <td>
+          <%= link_to profile_path(profile) do %>
+          <%= image_tag profile.image.variant(resize_to_fill: [80, 80]) , :alt => "プロフィール画像" %></td>
+          <% end %>
+        <% else %>
+          <td>
+          <%= link_to profile_path(profile) do %>
+          <%= image_tag("default_image.png", :size => "80x80", :alt => "プロフィール画像") %></td>
+          <% end %>
+        <% end %>
+        <td><%= profile.user_name %></td>
+        <td><%= profile.oshi_name %></td>
+        <td><%= profile.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td id="likes_buttons_<%= profile.id %>">
+          <%= render partial: 'likes/like', locals: {profile: profile} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<p><%= link_to 'みんなの推し一覧へ', :profiles ,class:"index_menu"%></p>
+</div>

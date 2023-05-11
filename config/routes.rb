@@ -15,9 +15,13 @@ Rails.application.routes.draw do
   post 'profiles/myprofile' #自身の投稿一覧
   post 'profiles/back' 
 
+  post 'like/:id' => 'likes#create', as: 'create_like'
+  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
+
   resources :profiles, only: [:index, :create, :new, :show, :edit, :update, :destroy] do
     collection do
       get :search, to: 'profiles#search'
+      get :likes
     end
   end
 end

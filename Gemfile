@@ -50,6 +50,10 @@ gem 'mini_magick'
 gem 'image_processing','~> 1.2'
 gem 'high_voltage'
 gem "importmap-rails", "~> 1.1"
+gem 'font-awesome-rails'
+gem 'font-awesome-sass'
+gem 'bootstrap-sass'
+gem 'kaminari'
 
 gem "dockerfile-rails", ">= 1.2", :group => :development
 

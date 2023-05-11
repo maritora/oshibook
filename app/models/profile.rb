@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :likes
   has_one_attached :image
   # 公開・非公開機能
   scope :published, -> {where(is_published_flag: true)}
@@ -11,5 +12,10 @@ class Profile < ApplicationRecord
   validates :favorite_point, presence: true, length: { maximum:20 } 
   validates :is_published_flag, inclusion: { in: [true, false] ,
     message: "は必須項目です"}
-
+  def self.ransackable_associations(auth_object = nil)
+     ["user"]
+  end
+  def self.ransackable_attributes(auth_object = nil)
+     ["oshi_name"]
+  end
 end

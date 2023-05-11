@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_05_023325) do
+ActiveRecord::Schema.define(version: 2023_05_01_151316) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,21 +40,25 @@ ActiveRecord::Schema.define(version: 2023_04_05_023325) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "profile_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "name"
-    t.date "birth"
     t.string "call"
     t.string "reason"
     t.string "every"
     t.string "future"
-    t.string "f_object"
     t.string "job"
     t.string "favorite_point"
     t.text "free"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "affiliation"
-    t.string "f_object_content"
     t.string "oshi_name"
     t.integer "user_id"
     t.binary "image"

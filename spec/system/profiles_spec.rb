@@ -27,7 +27,7 @@ RSpec.describe "Profiles", type: :system do
       end
       context '新規プロフィール作成ページへ遷移' do
         it '遷移する' do
-          click_on 'プロフィール作成'
+          click_on 'プロフィール作成する！'
           expect(page).to have_content "新規プロフィール作成"
           expect(current_path).to eq new_profile_path
         end
@@ -207,6 +207,13 @@ RSpec.describe "Profiles", type: :system do
           click_on '自分の投稿一覧'
           expect(page).to have_content "作成履歴"
           expect(current_path).to eq profiles_myprofile_path
+        end
+      end
+      context 'いいね一覧' do
+        it '遷移できる' do
+          click_on 'いいねした投稿'
+          expect(page).to have_content "いいね一覧"
+          expect(current_path).to eq likes_profiles_path
         end
       end
     end

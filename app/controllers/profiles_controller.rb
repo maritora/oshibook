@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show]
 
   def index
-    @profiles = Profile.published
+    @search_profiles = Profile.published.page(params[:page]).per(10)
   end
 
   def new
@@ -49,5 +49,9 @@ class ProfilesController < ApplicationController
 
   def myprofile_index
     @profiles = Profile.where(user_id: current_user.id).includes(:user).order("created_at DESC")
+  end
+  def likes
+    likes = Like.where(user_id: current_user.id).pluck(:profile_id)
+    @like_profiles = Profile.find(likes)
   end
 end
