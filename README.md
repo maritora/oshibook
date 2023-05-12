@@ -21,6 +21,7 @@ URL：https://oshibook.fly.dev/
 * Ruby 2.7.6
 * Ruby on Rails 6.1.7
 * PostgreSQL 14.7
+* jQuery
 * Docker
 * RSpec
 * fly.io
