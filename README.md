@@ -2,7 +2,7 @@
 
 ## OSHIBOOK
 
-URL：https://portfolio-oshibook.fly.dev/  
+URL：https://oshibook.fly.dev/  
 自分の推しを紹介できるサイトです。
 好きなアイドルや歌手・芸能人・スポーツ選手などあなたの推しのプロフィールを作成し、推しの好きなところを存分にアピールできます！
 
