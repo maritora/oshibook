@@ -7,7 +7,7 @@ URL：https://oshibook.fly.dev/
 好きなアイドルや歌手・芸能人・スポーツ選手などあなたの推しのプロフィールを作成し、推しの好きなところを存分にアピールできます！
 
 ### なぜ作ったのか
-昨今の推し活ブームや私自身、推しの存在で元気をもらっており、昔流行ったプロフィール帳形式で推しを紹介・良さを共有できる楽しいツールがあったらな。。。と思い、制作いたしました。
+昨今の推し活ブームや私自身、推しの存在で元気をもらっており、昔流行ったプロフィール帳形式で推しを紹介・良さを共有できる楽しいツールがあったらいいなと思い、制作いたしました。
 ### デモ画像
 <img width="990" alt="OSHIBOOK_sample01" src="https://github.com/maritora/oshibook/assets/102473459/2038205d-58d0-4e96-a618-9a91f4eabe68">
 <img width="990" alt="OSHIBOOK_sample02" src="https://github.com/maritora/oshibook/assets/102473459/65537365-6e17-4dce-87ba-7cbc8e8b9fe4">
